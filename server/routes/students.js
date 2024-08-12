@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const Alien = require('../models/alien')
+const Student = require('../models/student')
 
 router.get('/',async(req,res) =>{
     try{
-        const aliens = await Alien.find()
-        res.json(aliens)
+        const students = await Student.find()
+        res.json(students)
     }
     catch(err){
         res.send('Error'+err)
@@ -14,8 +14,8 @@ router.get('/',async(req,res) =>{
 
 router.get('/:id',async(req,res)=>{
     try{
-        const alien = await Alien.findById(req.params.id)
-        res.json(alien)
+        const student = await Student.findById(req.params.id)
+        res.json(student)
     }
     catch(err){
         res.send('Error' +err)
@@ -23,7 +23,7 @@ router.get('/:id',async(req,res)=>{
 })
 
 router.post('/',async(req,res)=>{
-    const alien= new Alien({
+    const student= new Student({
         name : req.body.name,
         roll : req.body.roll,
         branch: req.body.branch,
@@ -32,7 +32,7 @@ router.post('/',async(req,res)=>{
     })
 
     try{
-        const a1 = await alien.save()
+        const a1 = await student.save()
         res.json(a1)
     }
     catch(err){
@@ -42,7 +42,7 @@ router.post('/',async(req,res)=>{
 
 router.patch('/:id', async (req, res) => {
     try {
-        const alien = await Alien.findByIdAndUpdate(
+        const student = await Student.findByIdAndUpdate(
             req.params.id,
             {
                 name: req.body.name,
@@ -53,11 +53,11 @@ router.patch('/:id', async (req, res) => {
             },
             { new: true }
             );
-        if (!alien) {
-            return res.status(404).send('Alien not found');
+        if (!student) {
+            return res.status(404).send('Student not found');
         }
 
-        res.json(alien);
+        res.json(student);
     } catch (err) {
         res.status(500).send('Error: ' + err.message);
     }
@@ -67,7 +67,7 @@ router.patch('/:id', async (req, res) => {
 
 router.delete('/:id',async(req,res)=>{
     try{
-      const result =  await Alien.deleteOne({_id : req.params.id})
+      const result =  await Student.deleteOne({_id : req.params.id})
       res.send('Deleted')
         
     }
