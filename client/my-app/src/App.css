@@ -1,0 +1,71 @@
+/* App.css */
+
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(to right, #f4f4f9, #d9e7ff); /* Light gradient background */
+}
+
+h1 {
+  color: #4a90e2; /* Blue color for the header */
+  margin-bottom: 20px;
+}
+
+.information {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  border: 2px solid #4a90e2; /* Blue border around the form */
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #333; /* Dark grey color for labels */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="checkbox"] {
+  width: 90%;
+  padding: 10px;
+  margin: 5px 0 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #4a90e2; /* Blue border on focus */
+  outline: none;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+button {
+  background-color: #4a90e2; /* Blue background for the button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #357abd; /* Darker blue on hover */
+}
+
+button:focus {
+  outline: none;
+}
